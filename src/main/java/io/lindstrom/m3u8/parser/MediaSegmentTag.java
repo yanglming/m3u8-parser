@@ -89,6 +89,20 @@ enum MediaSegmentTag implements Tag<MediaSegment, MediaSegment.Builder> {
         }
     },
 
+    EXT_X_CUE_OUT_CONT {
+        @Override
+        public void read(MediaSegment.Builder builder, String attributes, ParsingMode parsingMode) {
+            builder.cueOutCont(CueOutContAttribute.parse(attributes, parsingMode));
+        }
+
+        @Override
+        public void write(MediaSegment mediaSegment, TextBuilder textBuilder) {
+            mediaSegment.cueOutCont().ifPresent(cueOutCont -> {
+                textBuilder.addTag(tag(), cueOutCont, CueOutContAttribute.attributeMap);
+            });
+        }
+    },
+
     EXT_X_CUE_IN {
         @Override
         public void read(MediaSegment.Builder builder, String attributes, ParsingMode parsingMode) {
