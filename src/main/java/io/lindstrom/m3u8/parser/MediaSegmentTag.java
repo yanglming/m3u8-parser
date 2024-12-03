@@ -91,7 +91,7 @@ enum MediaSegmentTag implements Tag<MediaSegment, MediaSegment.Builder> {
 
     EXT_X_CUE_OUT_CONT {
         @Override
-        public void read(MediaSegment.Builder builder, String attributes, ParsingMode parsingMode) {
+        public void read(MediaSegment.Builder builder, String attributes, ParsingMode parsingMode) throws PlaylistParserException {
             builder.cueOutCont(CueOutContAttribute.parse(attributes, parsingMode));
         }
 

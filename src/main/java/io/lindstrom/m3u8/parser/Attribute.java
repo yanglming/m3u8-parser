@@ -16,7 +16,7 @@ public interface Attribute<T, B> {
         boolean nextUpperCase = false;
 
         for (int i = 0; i < name.length(); i++) {
-            cahr c = name.charAt(i);
+            char c = name.charAt(i);
 
             if (c == '_') {
                 nextUpperCase = true;

@@ -16,7 +16,7 @@ public enum CueOutContAttribute implements Attribute<CueOutCont, CueOutCont.Buil
 
         @Override
         public void write(CueOutCont cueOutCont, TextBuilder textBuilder) {
-            textBuilder.elapsedTime.ifPresent(elapsedTime -> textBuilder.add(camelCaseKey(), elapsedTime));
+            cueOutCont.elapsedTime().ifPresent(elapsedTime -> textBuilder.add(camelCaseKey(), elapsedTime));
         }
     },
 
