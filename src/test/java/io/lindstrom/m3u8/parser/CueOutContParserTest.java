@@ -14,7 +14,6 @@ public class CueOutContParserTest {
 
     private String attributes = "ElapsedTime=40.0," +
             "Duration=50.0," +
-            "IV=0xc055ee9f6c1eb7aa50bfab02b0814972," +
             "SCTE35=/DAlAAAAAAAAA";
 
     @Test
